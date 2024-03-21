@@ -1,3 +1,17 @@
 # Jeon Gi Beom 2024 fullstack First Step
 
+/ -> Home
+/join -> Join
+/login -> Login
+/search -> Search
+
+/users/edit -> Edit user
+/users/delete -> Delete user
+
+/videos/watch -> Watch Video
+/videos/edit -> Edit Video
+/videos/delete -> Delete Video
+/videos/comment -> Comment on a video
+/videos/comments/delete -> Delete A Comment of a Video
+
 - 20240321 3.11 middleware 공부 완료

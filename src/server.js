@@ -10,6 +10,7 @@ const app = express();
 const logger = morgan("dev"); //combined 도있다
 app.use(logger);
 
+app.set("view engine", "pug");
 app.use("/", globalRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);

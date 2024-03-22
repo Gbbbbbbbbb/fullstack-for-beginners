@@ -9,3 +9,5 @@ videoRouter.get("/:id/edit", edit);
 videoRouter.get("/:id/delete", deleteVideo);
 
 export default videoRouter;
+
+//request는 제일 위에 것 부터봄

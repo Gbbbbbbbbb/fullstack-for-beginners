@@ -5,13 +5,15 @@
 /login -> Login
 /search -> Search
 
-/users/edit -> Edit user
-/users/delete -> Delete user
+/users/:id -> See User
+/users/logout -> Log Out
+/users/edit -> Edit My Profile
+/users/delete -> Delete My Profile
 
-/videos/watch -> Watch Video
-/videos/edit -> Edit Video
-/videos/delete -> Delete Video
-/videos/comment -> Comment on a video
-/videos/comments/delete -> Delete A Comment of a Video
+/videos/:id(동영상의) -> See Video
+/videos/:id/edit -> Edit Video
+/videos/:id/delete -> Delete Video
+/videos/upload -> Upload Video
 
 - 20240321 3.11 middleware 공부 완료
+- 20240322 4.5 Routers 공부 완료

@@ -22,3 +22,6 @@ const handleListening = () =>
   console.log(`Server listening on port 4000 http://localhost:${Port}`);
 
 app.listen(Port, handleListening);
+
+// 브라우저를 통해서 request를 보내고, 나의 행동을 listening 하고 있는 서버에만 request를 보낼 수 있음
+// 너가 request를 보낼 때, 해당 port(창문)로 request를 보낸다

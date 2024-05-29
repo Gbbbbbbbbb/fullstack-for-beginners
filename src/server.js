@@ -10,6 +10,8 @@ const app = express();
 const logger = morgan("dev"); //combined 도있다
 app.use(logger);
 
+// app.get 은 express의 get 메소드를 사용해서 페이지를 가져와라는 뜻이다
+
 app.set("view engine", "pug"); //pug 세팅법
 app.set("views", process.cwd() + "/src/views");
 app.use("/", globalRouter);

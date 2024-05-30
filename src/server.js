@@ -7,8 +7,8 @@ import videoRouter from "./routers/videoRouter";
 const Port = 4000;
 
 const app = express();
-const logger = morgan("dev"); //combined 도있다
-app.use(logger);
+const logger = morgan("dev"); //combined 도있다미들웨어이다
+app.use(logger); //get / (path) status code 정보를 줌
 
 // app.get 은 express의 get 메소드를 사용해서 페이지를 가져와라는 뜻이다
 

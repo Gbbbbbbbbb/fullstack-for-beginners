@@ -18,3 +18,12 @@
 - 20240321 3.11 middleware 공부 완료
 - 20240322 4.5 Routers 공부 완료
   //nfn 단축키
+
+Routing
+https://expressjs.com/ko/guide/routing.html
+
+정규표현식 테스트 사이트
+https://www.regexpal.com
+
+\w+: 모든 문자, 숫자 선택
+\d+: 모든 숫자 선택

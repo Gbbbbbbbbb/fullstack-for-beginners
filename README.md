@@ -29,3 +29,7 @@ https://www.regexpal.com
 \d+: 모든 숫자 선택
 
 -block content는 창문 같은 것이다.
+
+a(href="/video/edit")--->localhost:4000/video/edit
+a(href="video/edit")--->localhost:4000/videos/video/edit
+a(href=`${video.id}/edit`)--->localhost:4000/videos/1/edit

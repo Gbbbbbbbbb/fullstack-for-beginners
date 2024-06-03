@@ -33,3 +33,10 @@ https://www.regexpal.com
 a(href="/video/edit")--->localhost:4000/video/edit
 a(href="video/edit")--->localhost:4000/videos/video/edit
 a(href=`${video.id}/edit`)--->localhost:4000/videos/1/edit
+
+CRUD
+
+Create
+Read
+Update
+Delete

@@ -6,15 +6,8 @@ const handleSearch = (error, videos) => {
 };
 
 export const home = async (req, res) => {
-  try {
-    console.log("i start");
-    const videos = await Video.find({});
-    console.log("i finish");
-    console.log(videos);
-    res.render("home", { pageTitle: "Home", videos: [] });
-  } catch {
-    return res.render("server-error");
-  }
+  const videos = await Video.find({});
+  return res.render("home", { pageTitle: "Home", videos: [] });
 };
 //fakeUser:fakeUser = fakeUser
 export const watch = (req, res) => {
@@ -40,7 +33,18 @@ export const getUpload = (req, res) => {
 };
 
 export const postUpload = (req, res) => {
-  const { title } = req.body;
+  const { title, description, hashtags } = req.body;
+  const video = new Video({
+    title,
+    description,
+    createdAt: Date.now(),
+    hashtags: hashtags.split(",").map((word) => `#${word}`),
+    meta: {
+      views: 0,
+      rating: 0,
+    },
+  });
+  console.log(video);
   return res.redirect("/");
 };
 

@@ -6,11 +6,15 @@ const handleSearch = (error, videos) => {
 };
 
 export const home = async (req, res) => {
-  console.log("i start");
-  const videos = await Video.find({});
-  console.log("i finish");
-  console.log(videos);
-  res.render("home", { pageTitle: "Home", videos: [] });
+  try {
+    console.log("i start");
+    const videos = await Video.find({});
+    console.log("i finish");
+    console.log(videos);
+    res.render("home", { pageTitle: "Home", videos: [] });
+  } catch {
+    return res.render("server-error");
+  }
 };
 //fakeUser:fakeUser = fakeUser
 export const watch = (req, res) => {

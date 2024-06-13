@@ -29,7 +29,7 @@ export const getEdit = async (req, res) => {
 export const postEdit = async (req, res) => {
   const { id } = req.params;
   const { title, description, hashtags } = req.body;
-  const video = await Video.findById(id);
+  const video = await Video.exists({ _id: id });
   if (!video) {
     return res.render("404", { pageTitle: "Video not found" });
   }
@@ -37,16 +37,13 @@ export const postEdit = async (req, res) => {
   await Video.findByIdAndUpdate(id, {
     title: title,
     description,
-    hashtags: hashtags
-      .split(",")
-      .map((word) => (word.startsWith("#") ? word : `#${word}`)),
+    hashtags: Video.formatHashtags(hashtags),
   });
   // video.title = title;
   // video.description = description;
   // video.hashtags = hashtags
   //   .split(",")
   //   .map((word) => (word.startsWith("#") ? word : `#${word}`)); 위에랑 같은 것
-  await video.save();
   return res.redirect(`/videos/${id}`);
 };
 export const search = (req, res) => res.send("Search");
@@ -63,9 +60,7 @@ export const postUpload = async (req, res) => {
     await Video.create({
       title,
       description,
-      hashtags: hashtags
-        .split(",")
-        .map((word) => (word.startsWith("#") ? word : `#${word}`)),
+      hashtags: Video.formatHashtags(hashtags),
     });
     return res.redirect("/");
   } catch (error) {

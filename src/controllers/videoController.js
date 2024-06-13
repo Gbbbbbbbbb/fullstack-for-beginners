@@ -34,11 +34,18 @@ export const postEdit = async (req, res) => {
     return res.render("404", { pageTitle: "Video not found" });
   }
   // const title = req.body.title;
-  video.title = title;
-  video.description = description;
-  video.hashtags = hashtags
-    .split(",")
-    .map((word) => (word.startsWith("#") ? word : `#${word}`));
+  await Video.findByIdAndUpdate(id, {
+    title: title,
+    description,
+    hashtags: hashtags
+      .split(",")
+      .map((word) => (word.startsWith("#") ? word : `#${word}`)),
+  });
+  // video.title = title;
+  // video.description = description;
+  // video.hashtags = hashtags
+  //   .split(",")
+  //   .map((word) => (word.startsWith("#") ? word : `#${word}`)); 위에랑 같은 것
   await video.save();
   return res.redirect(`/videos/${id}`);
 };

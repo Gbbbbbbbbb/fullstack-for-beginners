@@ -16,7 +16,7 @@ videoRouter.route("/upload").get(getUpload).post(postUpload);
 
 // videoRouter.get("/:id(\\d+)/edit", getEdit);
 // videoRouter.post("/:id(\\d+)/edit", postEdit);
-videoRouter.get("/:id(\\d+)/delete", deleteVideo);
+videoRouter.route("/:id([0-9a-f]{24})/delete").get(deleteVideo);
 
 export default videoRouter;
 
